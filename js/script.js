@@ -9,6 +9,9 @@ console.log('karteczki');
 let moves = 0;
 let counter = document.querySelector('.moves')
 
+//Muzyczka
+var x = document.getElementById('musicIsGood')
+
 // karty otwarte
 var openedCards = [];
 
@@ -16,9 +19,13 @@ var openedCards = [];
 let matchedCard = document.getElementsByClassName('correct')
 
 // Zamknięcie wyskakującego okna
+let closed = document.querySelector('.closeBox')
 
 //Okno Modalne
 let modal = document.getElementById('end')
+
+//Ścieżki Arni
+const audiolist = ['./mp3/NyanCat.mp3','./mp3/showtime.mp3','./mp3/intotheboat.mp3']
 
 
 // Losowanie kart
@@ -79,20 +86,27 @@ function openCard() {
   var arrayLength = openedCards.length;
   if(arrayLength){
     moveCounter();
-    if(openedCards[0].type === openedCards[1].type){
-      matched();
-    } else {
-      unmatched();
+    if (openedCards.length === 2) {
+      if(openedCards[0].type === openedCards[1].type){
+        matched();
+      } else {
+        unmatched();
+      }
     }
+
   }
 };
 
 function matched() {
+  let random = Math.floor(Math.random()*(audiolist.length -1)) +1
+  console.log(random);
   openedCards[0].classList.add('correct', 'turnOff')
   openedCards[1].classList.add('correct', 'turnOff')
   openedCards[0].classList.remove('show', 'open','no-event')
   openedCards[1].classList.remove('show', 'open','no-event')
   openedCards = [];
+  x.setAttribute('src',audiolist[random])
+  x.play()
 }
 
 function unmatched(){
@@ -153,15 +167,15 @@ function startTimer(){
 }
 
 function congratulations(){
-    if (matchedCard.length == 2){
+    if (matchedCard.length == 4){
         clearInterval(interval);
         finalTime = timer.innerHTML;
         modal.classList.add("show");
-        var x = document.getElementById('musicIsGood')
-        x.play();
+        x.setAttribute('src',audiolist[0])
+        x.play()
         //Uruchamiamy modal
-        document.getElementById("finalMove").innerHTML = moves;
-        document.getElementById("totalTime").innerHTML = finalTime;
+        document.getElementById("finalMoves").innerHTML = moves;
+        document.getElementById("time").innerHTML = finalTime;
 
         //Zamknięcie modali
         closeModal();
@@ -171,8 +185,9 @@ function congratulations(){
 
 // Zamknięcie okna modalnego
 function closeModal(){
-    closeicon.addEventListener("click", function(e){
+    closed.addEventListener("click", function(e){
         modal.classList.remove("show");
+        x.pause();
         startGame();
     });
 }
@@ -181,6 +196,7 @@ function closeModal(){
 // JEszcze raz
 function playAgain(){
     modal.classList.remove("show");
+    x.pause();
     startGame();
 }
 
