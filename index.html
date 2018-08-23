@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang=pl dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>JavaScript - Memory Game by Mike Wencel</title>
+    <meta name="description" content="Gra Memory">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+
+<div class="container">
+  <header>
+    <h1>Memory</h1>
+  </header>
+
+  <div class="Tablica wyników">
+    <span class='moves'</span> ruchów
+      <div onclick = startGame() class='restart  '>
+        <span class='repeat'>Jeszcze raz</span>
+      </div>
+    </div>
+
+    <ul class='panel' id='cardMap'>
+      <li class="card" type='tiger'>
+      <img src='images/tiger.jpg' alt='Tygrys'>
+    </li>
+    <li class="card" type='tiger'>
+    <img src='images/tiger.jpg' alt='Tygrys'>
+  </li>
+  <li class="card" type='raccoon'>
+  <img src='images/raccoon.jpg' alt='Szop'>
+</li>
+<li class="card" type='raccoon'>
+<img src='images/raccoon.jpg' alt='Szop'>
+</li>
+<li class="card" type='monkey'>
+<img src='images/monkey.jpeg' alt='Małpka'>
+</li>
+<li class="card" type='monkey'>
+<img src='images/monkey.jpeg' alt='Małpka'>
+</li>
+<li class="card" type='shark'>
+<img src='images/shark.jpeg' alt='Rekin'>
+</li>
+<li class="card" type='shark'>
+<img src='images/shark.jpeg' alt='Rekin '>
+</li>
+<li class="card" type='bearWhite'>
+<img src='images/bearWhite.jpg' alt='Miś Polarny'>
+</li>
+<li class="card" type='bearWhite'>
+<img src='images/bearWhite.jpg' alt='Miś Polarny'>
+</li>
+<li class="card" type='elephant'>
+<img src='images/elephant.jpg' alt='Słoń'>
+</li>
+<li class="card" type='elephant'>
+<img src='images/elephant.jpg' alt='Słoń'>
+</li>
+<li class="card" type='donkey'>
+<img src='images/donkey.jpg' alt='Osiołek'>
+</li>
+<li class="card" type='donkey'>
+<img src='images/donkey.jpg' alt='Osiołek'>
+</li>
+<li class="card" type='dog'>
+<img src='images/german.jpeg' alt='Pies'>
+</li>
+<li class="card" type='dog'>
+<img src='images/german.jpeg' alt='Pies'>
+</li>
+<li class="card" type='cat'>
+<img src='images/cat.jpeg' alt='kot'>
+</li>
+<li class="card" type='cat'>
+<img src='images/cat.jpeg' alt='kot'>
+</li>
+<li class="card" type='dolphin'>
+<img src='images/dolphin.jpg' alt='delfin'>
+</li>
+<li class="card" type='dolphin'>
+<img src='images/dolphin.jpg' alt='delfin'>
+</li>
+<li class="card" type='birdy'>
+<img src='images/birdy.jpeg' alt='Ptak'>
+</li>
+<li class="card" type='birdy'>
+<img src='images/birdy.jpeg' alt='Ptak'>
+</li>
+<li class="card" type='snake'>
+<img src='images/snake.jpg' alt='Wąż'>
+</li>
+<li class="card" type='snake'>
+<img src='images/snake.jpg' alt='Wąż'>
+</li>
+<li class="card" type='cow'>
+<img src='images/cow.png' alt='Krowa'>
+</li>
+<li class="card" type='cow'>
+<img src='images/cow.png' alt='Krowa'>
+</li>
+<li class="card" type='mouse'>
+<img src='images/mouse.jpg' alt='Mysz'>
+</li>
+<li class="card" type='mouse'>
+<img src='images/mouse.jpg' alt='Mysz'>
+</li>
+<li class="card" type='wolf'>
+<img src='images/wolf.jpg' alt='Wilk'>
+</li>
+<li class="card" type='wolf'>
+<img src='images/wolf.jpg' alt='Wilk'>
+</li>
+<li class="card" type='lion'>
+<img src='images/lion.jpg' alt='Lew'>
+</li>
+<li class="card" type='lion'>
+<img src='images/lion.jpg' alt='Lew'>
+</li>
+</ul>
+
+<div id='end' class="showEnd">
+  <div class='modal'>
+    <h2>Gratulacje !!!<h2>
+      <audio id="musicIsGood"controls autoplay>
+        <source src="mp3/NyanCat.mp3" type='audio/mpeg'>
+        </audio>
+      <a class='closeBox' href=#>Zamknij</a>
+      <div class='article'>
+        Wygrałeś w <span id=finaleMoves></span> w <span id="time"></span>
+      </div>
+      <button id='again' onclick='again()'>
+        Jeszcze raz
+      </button>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

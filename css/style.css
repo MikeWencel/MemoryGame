@@ -1,0 +1,134 @@
+/* Reset */
+
+html {
+  box-sizing: border-box;
+}
+
+html,body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: orange;
+  font-family: cursive;
+  font-size: 12px;
+}
+
+/* Główny styl */
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: monospace;
+}
+
+
+.panel {
+  width: 80%;
+  background: darkgreen;
+  border-radius: 5px;
+  padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 3em
+}
+
+.panel .card img {
+  width: 100px;
+  display: none;
+}
+
+
+.panel .card.show img {
+display: inline;
+}
+
+.panel .card.correct img {
+display: inline;
+}
+
+.panel .card {
+  height: 4rem;
+  width: 4rem;
+  margin: 0.3rem 0.3rem;
+  background: darkblue;
+  color: white;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: zoom-in;
+}
+
+.panel .open {
+  background: darkred;
+  animation-name: challenge;
+  backface-visibility: visible;
+  animation-duration: 1.50s;
+}
+
+.panel .card.show {
+  font-size: 50px;
+}
+
+.panel .card.correct {
+  background: green;
+  font-size: 50px;
+  cursor: default;
+  animation-name: Yupii;
+  animation-duration: 1s;
+  backface-visibility: visible;
+}
+
+.panel .card.uncorrect {
+  background: red;
+  backface-visibility: visible;
+  animation-name: Unlucky;
+}
+
+.panel .card.turnOff {
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+
+/* klasa dla modala */
+.showEnd {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0,0,0,0.5);
+  transition: opacity 700ms;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show {
+  visibility: visible !important;
+  opacity: 100 !important;
+}
+
+.modal {
+  margin: 100px auto;
+  width: 50%;
+  background: white;
+  position: relative;
+
+}
+
+#musicIsGood {
+  display: none;
+}
+/* Animacje */
