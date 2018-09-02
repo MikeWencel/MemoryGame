@@ -11,6 +11,11 @@ html,body {
   padding: 0;
 }
 
+img {
+  height: 70px;
+  width: 70px;
+}
+
 body {
   background: #181c21;
   font-family: cursive;
@@ -29,7 +34,7 @@ header {
     color: white;
     text-align: center;
 
-    
+
 }
 
 .bottom {
@@ -65,20 +70,20 @@ h1 {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  width: 600px;
-  height: 350px;
+  width: 100%
   margin-top: 100px
 }
 
 .panel .card img {
   display: none;
-    background: none;
+  background: none;
 }
 
 
 .panel .card.show img {
-display: inline;
-    background: none;
+  display: inline;
+  background: none;
+
 }
 
 .panel .card.correct img {
@@ -95,7 +100,7 @@ display: inline;
   justify-content: center;
   align-items: center;
     cursor: grab;
-    background:#3d76b7; 
+    background:#3d76b7;
 }
 
 .panel .open {
@@ -118,7 +123,7 @@ display: inline;
 
 .panel .card.uncorrect {
   backface-visibility: visible;
-    
+
 }
 
 .panel .card.turnOff {
@@ -169,7 +174,7 @@ ul {
   border: 2px solid #5a1a1a;
   padding: 10px;
   border-radius: 25px;
-  text-align: center;  
+  text-align: center;
 }
 
 .closeBox {
@@ -234,4 +239,3 @@ ul {
     opacity: 0;
   }
 }
-
