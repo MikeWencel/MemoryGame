@@ -6,21 +6,20 @@
     <meta name="description" content="Gra Memory">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    
   </head>
   <body>
 
 <div class="container">
   <header>
     <h1>Memory</h1>
+
+    <span class='moves'></span> Ruchów
+
   </header>
 
-  <div class="Tablica wyników">
-    <span class='moves'</span> ruchów
-      <div onclick = startGame() class='restart  '>
-        <span class='repeat'>Jeszcze raz</span>
-      </div>
-    </div>
-
+ 
     <ul class='panel' id='cardMap'>
       <li class="card" type='tiger'>
       <img src='images/tiger.jpg' alt='Tygrys'>
@@ -119,21 +118,31 @@
 <img src='images/lion.jpg' alt='Lew'>
 </li>
 </ul>
-
+      <div class="bottom">
+      <button class='again' onclick='playAgain()'>
+     Nowa Gra
+      </button>
+    </div>
 <div id='end' class="showEnd">
   <div class='modal'>
-    <h2>Gratulacje !!!<h2>
+      <h2>Gratulacje !!!</h2>
       <audio id="musicIsGood"controls>
         <source src="mp3/NyanCat.mp3" type='audio/mpeg'>
         </audio>
       <a class='closeBox' href=#>Zamknij</a>
       <div class='article'>
-        Wygrałeś w <span id='finalMoves'></span> w <span id="time"></span>
+        Wygrałeś w <span id='finalMoves'></span> ruchy <br>
+        Twój czas to: <span id="time"> </span>
       </div>
-      <button id='again' onclick='playAgain()'>
+      <button class='again' onclick='playAgain()'>
         Jeszcze raz
       </button>
+          </div>
     </div>
+      </div>
+      <footer>
+          COPYRIGHTS MIKE WENCEL
+      </footer>
     <script src="js/script.js"></script>
   </body>
 </html>

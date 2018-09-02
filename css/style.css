@@ -12,13 +12,40 @@ html,body {
 }
 
 body {
-  background: orange;
+  background: #181c21;
   font-family: cursive;
-  font-size: 12px;
+  font-size: 15px;
+border: none;
+    text-transform: uppercase;
+    color: steelblue;
+    letter-spacing: 1px;
 }
 
 /* Główny styl */
 
+header {
+    background: steelblue;
+    width: 100%;
+    color: white;
+    text-align: center;
+
+    
+}
+
+.bottom {
+    background: steelblue;
+    width: 100%;
+    color: white;
+    text-align: center;
+    margin-top: 100px;
+
+}
+
+footer {
+    text-align: center;
+    height:250px;
+    background: white;
+}
 .container {
   display: flex;
   align-items: center;
@@ -32,25 +59,26 @@ h1 {
 
 
 .panel {
-  width: 80%;
-  background: darkgreen;
+  background: stellblue;
   border-radius: 5px;
-  padding: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin: 0 0 3em
+  width: 600px;
+  height: 350px;
+  margin-top: 100px
 }
 
 .panel .card img {
-  width: 100px;
   display: none;
+    background: none;
 }
 
 
 .panel .card.show img {
 display: inline;
+    background: none;
 }
 
 .panel .card.correct img {
@@ -61,20 +89,19 @@ display: inline;
   height: 4rem;
   width: 4rem;
   margin: 0.3rem 0.3rem;
-  background: darkblue;
   color: white;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: zoom-in;
+    cursor: grab;
+    background:#3d76b7; 
 }
 
 .panel .open {
-  background: darkred;
   animation-name: challenge;
   backface-visibility: visible;
-  animation-duration: 1.50s;
+  animation-duration: 0.50s;
 }
 
 .panel .card.show {
@@ -82,23 +109,36 @@ display: inline;
 }
 
 .panel .card.correct {
-  background: green;
   font-size: 50px;
   cursor: default;
-  animation-name: Yupii;
+  animation-name: yupi;
   animation-duration: 1s;
   backface-visibility: visible;
 }
 
 .panel .card.uncorrect {
-  background: red;
   backface-visibility: visible;
-  animation-name: Unlucky;
+    
 }
 
 .panel .card.turnOff {
   pointer-events: none;
   opacity: 0.7;
+}
+
+button {
+    border: none;
+    background: none;
+    text-transform: uppercase;
+    color: steelblue;
+    letter-spacing: 1px;
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
+
+ul {
+    display: block;
 }
 
 
@@ -123,12 +163,75 @@ display: inline;
 .modal {
   margin: 100px auto;
   width: 50%;
-  background: white;
+  background: steelblue;;
   position: relative;
+  color: white;
+  border: 2px solid #5a1a1a;
+  padding: 10px;
+  border-radius: 25px;
+  text-align: center;  
+}
 
+.closeBox {
+	color: white;
+	text-decoration: none;
 }
 
 #musicIsGood {
   display: none;
 }
+
+.again {
+    color: white;
+    font-size: 15px;
+    font-weight: 600px;
+    min-width: 100px;
+    cursor: pointer;
+}
+
 /* Animacje */
+
+@keyframes challenge {
+
+
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+
+
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+}
+
+
+@keyframes yupi {
+
+ from {
+    -webkit-transform: perspective(400px);
+    transform: perspective(400px);
+  }
+
+  30% {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1;
+  }
+
+  to {
+    -webkit-transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0;
+  }
+}
+

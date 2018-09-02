@@ -3,7 +3,7 @@ const panel = document.getElementById('cardMap')
 // Utrzymywanie kart w pozycji
 let card = document.getElementsByTagName('li')
 let cards = [...card]
-console.log('karteczki');
+
 
 // Zmienna odpowiedzialna za ilośc ruchówarn
 let moves = 0;
@@ -25,7 +25,7 @@ let closed = document.querySelector('.closeBox')
 let modal = document.getElementById('end')
 
 //Ścieżki Arni
-const audiolist = ['./mp3/NyanCat.mp3','./mp3/showtime.mp3','./mp3/intotheboat.mp3']
+const audiolist = ['./mp3/NyanCat.mp3','./mp3/showtime.mp3','./mp3/bathroom.mp3','./mp3/chopper.mp3','./mp3/tobe.mp3','./mp3/intotheboat.mp3','./mp3/back.mp3','./mp3/hahaha.mp3','./mp3/spot.mp3']
 
 
 // Losowanie kart
@@ -153,7 +153,7 @@ var timer = document.querySelector('#time');
 var interval;
 function startTimer(){
     interval = setInterval(function(){
-        timer.innerHTML = minute+'minuty '+second+'sekundy';
+        timer.innerHTML = minute+' minut(y) '+second+' sekund(y)';
         second++;
         if(second == 60){
             minute++;
@@ -167,7 +167,7 @@ function startTimer(){
 }
 
 function congratulations(){
-    if (matchedCard.length == 4){
+    if (matchedCard.length == 32){
         clearInterval(interval);
         finalTime = timer.innerHTML;
         modal.classList.add("show");
